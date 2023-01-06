@@ -29,22 +29,25 @@ export class PokemonListComponent {
       
   }
 
-  getColor(index:number){
+  getColor(index:number,statindex:number){
     const typeArr = this.pokemons[index].types;
     let color = 'black';
     for (let typeIndex = 0; typeIndex < typeArr.length; typeIndex++) {
       // console.log(this.pokemons[index].name ,typeArr[typeIndex]);
-      if(this.pokemons[index].types[typeIndex].type.name === 'grass'){
+      if(this.pokemons[index].types[statindex].type.name === 'grass'){
         color = 'green';
       }
-      if(this.pokemons[index].types[typeIndex].type.name === 'fire'){
+      if(this.pokemons[index].types[statindex].type.name === 'fire'){
         color = 'red';
       }
-      if(this.pokemons[index].types[typeIndex].type.name === 'water'){
+      if(this.pokemons[index].types[statindex].type.name === 'water'){
         color = 'blue';
       }
-      if(this.pokemons[index].types[typeIndex].type.name === 'flying'){
+      if(this.pokemons[index].types[statindex].type.name === 'flying'){
         color = 'gray';
+      }
+      if(this.pokemons[index].types[statindex].type.name === 'poison'){
+        color = 'violet';
       }
     }
     return color;
